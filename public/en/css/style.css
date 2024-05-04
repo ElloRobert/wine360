@@ -1,0 +1,1772 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+
+/* HTML5 display-role reset for older browsers */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+/* Main style */
+
+html,
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: #B8EEFF;
+}
+
+section#title,
+section#scroll {
+    text-align: center;
+    position: relative;
+    min-height: 500px;
+    min-width: 100%;
+}
+
+section#title {
+    height: 90vh;
+    /*  background-image: url('../img/sky.svg');
+    background-size: cover;
+    background-repeat: no-repeat;*/
+}
+
+a.login-btn {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 100;
+    cursor: pointer;
+    display: inline-block;
+    margin: 0 10px 0 0;
+    padding: 5px 20px;
+    font-size: 20px;
+    line-height: 1.2;
+    vertical-align: bottom;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    color: #fff;
+    border: none;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    -webkit-box-shadow: 0 8px #27496d;
+    -moz-box-shadow: 0 8px #27496d;
+    box-shadow: 0 8px #27496d;
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    text-decoration: none;
+    background: rgb(27, 184, 158);
+    /* Old browsers */
+    background: -moz-linear-gradient(-45deg, rgba(27, 184, 158, 1) 0%, rgba(27, 172, 188, 1) 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, rgba(27, 184, 158, 1) 0%, rgba(27, 172, 188, 1) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, rgba(27, 184, 158, 1) 0%, rgba(27, 172, 188, 1) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#1bb89e', endColorstr='#1bacbc', GradientType=1);
+    /* IE6-9 fallback on horizontal gradient */
+}
+
+a.login-btn:hover,
+a.login-btn.hover {
+    outline: none;
+}
+
+button:focus {
+    outline: none;
+}
+
+a.login-btn:active,
+a.login-btn.active {
+    -webkit-box-shadow: 0 5px #27496d;
+    -moz-box-shadow: 0 5px #27496d;
+    box-shadow: 0 5px #27496d;
+    -webkit-transform: translateY(5px);
+    -moz-transform: translateY(5px);
+    -ms-transform: translateY(5px);
+    -o-transform: translateY(5px);
+    transform: translateY(5px);
+}
+
+.select-lang.terms-impressum{
+    left: unset;
+    right: 50px;
+}
+
+.select-lang{
+    cursor: pointer;
+    z-index: 9999;
+    width: 35px;
+    display: inline-block;
+    float: left;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    box-shadow: 0px 0px 30px rgba(24,183,160,0.4);
+    -webkit-box-shadow: 0px 0px 30px rgba(24,183,160,0.4);
+    -moz-box-shadow: 0px 0px 30px rgba(24,183,160,0.4);
+}
+
+.select-lang .dropdown ul{
+    display: none;
+    padding-top: 3px;
+    border-top: 1px solid rgb(24,183,160);
+}
+
+.select-lang ul li{
+    cursor: pointer;
+}
+
+.select-lang > li > img{
+    width: 100%;
+}
+
+#title .cloud {
+    width: 28vw;
+    height: 250px;
+    max-height: 250px;
+    position: absolute;
+    z-index: 999;
+}
+
+.cloud.one {
+    background-image: url(../img/clouds.svg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    top: 10%;
+    left: 5%;
+}
+
+.cloud.two {
+    background-image: url(../img/clouds.svg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    top: 15%;
+    right: 10%;
+}
+
+section#title .logo-block {
+    position: fixed;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+    width: 100%;
+    max-height: 425px;
+    max-width: 425px;
+    background-image: url('../img/logo-box.svg');
+    background-size: 100% 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    z-index: 50;
+}
+
+.logo-text {
+    width: 60%;
+    height: 50%;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-55%, -15%);
+}
+
+.logo-text h1 {
+    color: #31B89F;
+    font-size: 1.5em;
+}
+
+.go-to img {
+    width: 50px;
+    margin-top: 5%;
+}
+
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    z-index: 999;
+    transform: translateY(-60%);
+}
+
+.nav-btn li {
+    margin-bottom: 10px;
+    border-color: #4d4d4d;
+    border-radius: 50%;
+    border: 2px solid #4d4d4d;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+}
+
+.nav-btn li .material-icons {
+    font-size: 30px;
+}
+
+.panel {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* Parallax panels */
+
+.panel .layer1,
+.panel .layer2,
+.panel .layer3 {
+    height: 100%;
+    width: 100%;
+}
+
+.car {
+    position: absolute;
+    bottom: 5%;
+    z-index: 14;
+    width: 23.5vw;
+    max-width: 380px;
+    min-width: 200px;
+    transition: all 0.2s ease;
+    -webkit-transition: all 0.2s ease;
+}
+
+#one .car {
+    left: 0;
+}
+
+#two .car {
+    right: -20%;
+    z-index: 25;
+}
+
+#three .car {
+    left: 0;
+    z-index: 25;
+}
+
+#four .car {
+    right: 0;
+    z-index: 25;
+}
+
+.car .car-img {
+    height: 100%;
+    width: 23.5vw;
+    max-height: 170px;
+    position: relative;
+    bottom: -5px;
+}
+
+#two .car .car-img,
+#four .car .car-img {
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
+}
+
+.panel .layer1 {
+    background-image: url('../img/1grad.svg');
+    background-size: 101% auto;
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    z-index: 3;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+/* ADDED */
+
+
+/* Parallax panels */
+
+.panel .layer1,
+.panel .layer2,
+.panel .layer3 {
+    height: 100%;
+    width: 100%;
+}
+
+.panel .layer1 {
+    background-image: url('../img/1grad.svg');
+    background-size: 101% auto;
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    z-index: 3;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.panel.subpage .layer1 {
+    background-image: url('../img/panels.svg');
+}
+
+.layer1 img {
+    width: 100%;
+    height: auto;
+    vertical-align: bottom;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.panel .layer2 {
+    position: absolute;
+    background-image: url('../img/middle_buildings.svg');
+    background-size: cover;
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    /*width: 85%;
+    height: 80%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);*/
+    z-index: 2;
+    transition: all 0.2s ease;
+    -webkit-transition: all 0.2s ease;
+}
+
+.panel .layer3 {
+    position: absolute;
+    background-image: url('../img/far_buildings.svg');
+    background-size: cover;
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    /*width: 92%;
+    height: 90%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);*/
+    z-index: 1;
+    transition: transform 0.3s ease;
+    -webkit-transition: transform 0.3s ease;
+}
+
+#five.panel .layer1 {
+    background-image: url('../img/panels.svg');
+}
+
+
+/* Elements */
+
+#one.panel .garage {
+    position: absolute;
+    bottom: -10px;
+    left: -10px;
+    height: 100%;
+    width: 25vw;
+    max-height: 500px;
+    max-width: 305px;
+    background-image: url(../img/garage.svg);
+    background-size: 100% 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    z-index: 35;
+}
+
+#one.panel .cloud {
+    position: absolute;
+    top: 2%;
+    width: 50%;
+    max-width: 600px;
+    height: 100%;
+    max-height: 300px;
+    opacity: 0;
+    left: 30%;
+    background-image: url(../img/clouds.svg);
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    z-index: 100;
+}
+
+#one.panel .cloud h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.8em;
+    color: #31B89F;
+    font-weight: bold;
+    text-align: center;
+}
+
+#two.panel .cloud {
+    position: absolute;
+    top: 2%;
+    width: 50%;
+    max-width: 600px;
+    height: 100%;
+    max-height: 300px;
+    opacity: 0;
+    left: 30%;
+    background-image: url(../img/clouds.svg);
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    z-index: 100;
+}
+
+#two.panel .cloud h2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.8em;
+    color: #31B89F;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+/*
+#two .station {
+    position: absolute;
+    bottom: -55px;
+    left: 50%;
+    height: 75%;
+    width: 50vw;
+    max-width: 900px;
+    background-image: url('../img/gas-stat.svg');
+    background-position: center bottom -40px;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    transform: translate(-50%, 0px);
+    z-index: 20;
+}
+
+
+#two .station {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 0 auto;
+    right: 0;
+    height: 65%;
+    width: 50vw;
+    max-width: 900px;
+    background-image: url('../img/gas-stat.svg');
+    background-position: center bottom;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    z-index: 20;
+}*/
+#two .station {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 0 auto;
+    right: 0;
+    height: 65%;
+    width: 50vw;
+    max-width: 900px;
+    background-image: url('../img/petrol-stat.svg');
+    background-position: bottom center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    z-index: 20;
+}
+#two .station-front {
+    display:none !important;
+    height: 100%;
+    width: 100%;
+    background-image: url('../img/gas-stat-fronts.svg');
+    background-position: center center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    z-index: 150;
+    position: relative;
+}
+
+#three.panel .cloud {
+    position: absolute;
+    top: 2%;
+    width: 50%;
+    max-width: 650px;
+    height: 100%;
+    max-height: 300px;
+    opacity: 0;
+    left: 30%;
+    background-image: url(../img/clouds.svg);
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    z-index: 100;
+}
+
+#three.panel .cloud h2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.8em;
+    color: #31B89F;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+/*
+#three .workshop {
+    position: absolute;
+    bottom: -5%;
+    right: 20%;
+    height: 76%;
+    width: 60vw;
+    max-width: 1000px;
+    background-image: url(../img/workshop.svg);
+    background-position: center center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    z-index: 20;
+}
+*/
+
+#three .workshop {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 76%;
+    width: 60vw;
+    max-width: 1000px;
+    background-image: url(../img/workshop.svg);
+    background-position: bottom center;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    z-index: 20;
+    left: 0;
+    margin: 0 auto;
+}
+
+#three .elevator {
+    position: absolute;
+    z-index: 100;
+    height: 50vh;
+    width: 35vw;
+    bottom: 4%;
+    background-image: url(../img/elevator.svg);
+    background-position: center center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    left: 0;
+    transform: translate(85%, 0%);
+    max-height: 500px;
+}
+
+#three .lift {
+    border-bottom: 10px solid #4d4d4d;
+}
+
+#three .sticky {
+    position: absolute;
+    top: 35%;
+    right: -20%;
+    background-image: url(../img/sticky-note.svg);
+    background-position: center center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    max-width: 250px;
+    max-height: 250px;
+    z-index: 25;
+}
+
+.sticky p.title {
+    background-color: orange;
+    padding: 7px;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-align: center;
+}
+
+.sticky .list {
+    text-align: left;
+    margin: 20px 0 0 20%;
+}
+
+.sticky .list i.material-icons {
+    color: green;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.sticky .list span {
+    position: relative;
+    top: -5px;
+    font-size: 1.5em;
+}
+
+#four.panel .cloud {
+    position: absolute;
+    top: 2%;
+    width: 50%;
+    max-width: 700px;
+    height: 100%;
+    max-height: 300px;
+    opacity: 0;
+    left: 30%;
+    background-image: url(../img/clouds.svg);
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    z-index: 100;
+}
+
+#four.panel .cloud h2 {
+    position: absolute;
+    top: 50%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+    font-size: 1.8em;
+    color: #31B89F;
+    font-weight: bold;
+    text-align: center;
+}
+
+#four.panel .parking-block {
+    position: absolute;
+    bottom: -50px;
+    left: -6%;
+    height: 83%;
+    width: 100%;
+    max-width: 100%;
+    max-height: 850px;
+    background-image: url(../img/parking-zgrada-skraceno.svg);
+    background-position: center center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    z-index: 20;
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
+}
+
+
+/*
+#four.panel .parking-block {
+    position: absolute;
+    bottom: -3px;
+    left: -10px;
+    height: 85%;
+    width: 100%;
+    max-width: 100%;
+    background-image: url(../img/parking.svg);
+    background-position: left center;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    z-index: 20;
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
+}
+*/
+
+#five.panel .login-panel {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 80%;
+    width: 35%;
+    max-width: 480px;
+    max-height: 700px;
+    transform: translate(-50%, -35%);
+    background-image: url(../img/panel.svg);
+    background-image: url(../img/stup.svg);
+    background-size: 100% 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    z-index: 25;
+}
+
+.login-panel .lights {
+    width: 100%;
+    height: 510px;
+    position: relative;
+    background: url(../img/lights-l.svg) top left no-repeat, url(../img/lights-r.svg) top right no-repeat;
+}
+
+.info-box {
+    position: absolute;
+    max-height: 250px;
+    max-width: 280px;
+    height: 100%;
+    width: 100%;
+    z-index: 9999;
+}
+
+.holder {
+    height: 100%;
+    width: 100%;
+}
+
+.info-box .text {
+    background-image: url('../img/info-box.svg');
+    background-size: 100% 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+}
+
+.info-box .box {
+    position: absolute;
+    height: 50%;
+    width: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+    color: #31B89F;
+}
+
+.info-box span {
+    font-size: 1.7em;
+    font-weight: 700;
+}
+
+.info-box p {
+    font-size: 1.15em;
+    font-weight: 500;
+    line-height: 1.2em;
+    text-align: center;
+}
+
+#first_one.info-box {
+    bottom: 40%;
+    left: 25%;
+    z-index: 9999999;
+}
+
+#second_one.info-box {
+    bottom: 31%;
+    left: 45%;
+}
+
+#third_one.info-box {
+    bottom: 47%;
+    left: 65%;
+}
+
+.info-box .cta img {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+}
+
+#first_two.info-box {
+    bottom: 48%;
+    left: 10%;
+}
+
+#second_two.info-box {
+    bottom: 52%;
+    right: 10%;
+}
+
+#second_two.info-box .box {
+    width: 55%;
+}
+
+#second_two.info-box span {
+    font-size: 1em;
+    font-weight: 500;
+    font-style: italic;
+}
+
+#first_three.info-box {
+    left: 8%;
+    bottom: 55%;
+}
+
+#first_three.info-box span {
+    font-size: inherit;
+}
+
+
+/* Form */
+
+.form {
+    position: absolute;
+    width: 72%;
+    height: 92%;
+    padding: 0;
+    top: 1%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    max-height: 500px;
+    background-color: #f1f1f1;
+    border-radius: 10px;
+}
+
+.form {
+    height: 100%;
+    max-height: 550px;
+}
+
+.form img.logo{
+    width: 84%;
+    padding: 10px 30px;
+}
+
+.form .field {
+    position: relative;
+    border-radius: 10%;
+    margin-bottom: 20px;
+    box-shadow: 0px 0px 30px rgba(24,183,160,0.4);
+    -webkit-box-shadow: 0px 0px 30px rgba(24,183,160,0.4);
+    -moz-box-shadow: 0px 0px 30px rgba(24,183,160,0.4);
+}
+
+.form .container {
+    margin-top: 12px;
+}
+
+.field-group{
+    padding: 0 20px;
+}
+
+.field .form-input{
+    width: calc(100% - 105px);
+    height: 31px;
+    padding: 6px 10px;
+    font-size: 16px;
+    color: #4b4b4b;
+    background-color: #fff;
+    margin: 0 0 0 85px;
+    border: 1px solid #ccc;
+    border-radius: 0 10px 10px 0;
+    border-left: 0;
+}
+
+.field .form-input:focus{
+    border-color: rgb(24,183,160);
+}
+
+.field i {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    display: block;
+    width: 85px;
+    height: 45px;
+    line-height: 50px;
+    text-align: center;
+    color: #fff;
+    background: rgb(27, 184, 158);
+    /* Old browsers */
+    background: -moz-linear-gradient(-45deg, rgba(27, 184, 158, 1) 0%, rgba(27, 172, 188, 1) 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, rgba(27, 184, 158, 1) 0%, rgba(27, 172, 188, 1) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, rgba(27, 184, 158, 1) 0%, rgba(27, 172, 188, 1) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#1bb89e', endColorstr='#1bacbc', GradientType=1);
+    /* IE6-9 fallback on horizontal gradient */
+    border-radius: 10px 0 0 10px;
+}
+
+.form p {
+    color: #31B89F;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.form p:nth-child(2) {
+    font-size: 1.7em;
+}
+
+.form p:nth-child(3) {
+    font-size: 1.65em;
+}
+
+.form p:nth-child(4) {
+    font-size: 1.6em;
+}
+
+.form p:nth-child(5) {
+    font-size: 1.55em;
+}
+
+.form p:nth-child(6) {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.submit-row{
+    background-image: url('../img/login-button-bg-img.svg');
+    background-size: 100% 100%;
+    padding: 10px 0;
+}
+
+.submit_btn {
+    font-size: 1em;
+    text-transform: uppercase;
+    font-family: Montserrat;
+    font-weight: bold;
+    border: 0;
+    padding: 5px 10px;
+    background-color: transparent;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+}
+
+span.psw {
+    color: #4b4b4b;
+    line-height: 1;
+    font-size: 0.85em;
+}
+
+span.psw a {
+    color: #31B89F;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+span.psw.reg{
+
+}
+
+p.form-nav {
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+    color: #9b9b9b;
+}
+
+.form-nav a {
+    color: #9b9b9b;
+    text-decoration: none;
+    font-size: 0.85em;
+}
+
+
+/* Subpages */
+
+.home-cloud {
+    width: 30vw;
+    max-width: 340px;
+    height: 20vh;
+    background-image: url(../img/clouds.svg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    top: 3%;
+    left: 50px;
+    z-index: 400;
+    position: absolute;
+}
+
+.home-cloud img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -75%);
+    width: 100%;
+    height: auto;
+    max-width: 210px;
+}
+
+.content-space {
+    z-index: 100;
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-image: url(../img/big-panel-pillar.svg), url(../img/big-panel-lights.svg);
+    background-position: center bottom, center top;
+    background-size: 100% 85%, 100% 80px;
+    background-repeat: no-repeat, no-repeat;
+}
+
+.big-panel {
+    z-index: 100;
+    position: absolute;
+    width: 70%;
+    height: 78%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: silver;
+    padding: 10px 15px;
+    overflow-y: auto;
+    background-color: #f1f1f1;
+    border: 6px solid #4d4d4d;
+    border-radius: 15px;
+}
+
+.big-panel h1 {
+    font-size: 2em;
+    margin: 10px 0 20px;
+    text-align: center;
+}
+
+.big-panel h2 {
+    font-size: 1.5em;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    padding: 0 20px;
+}
+
+.big-panel p {
+    font-size: 1em;
+    line-height: 1.3em;
+    padding: 0 20px;
+}
+
+.big-panel p:last-child {
+    margin-bottom: 30px;
+}
+
+.big-panel p a{
+    text-decoration: none;
+    color: #000;
+}
+
+@media only screen and (max-width: 1700px) {
+    #title .cloud {
+        width: 28vw;
+        height: 215px;
+        max-height: 215px;
+    }
+    #four.panel .parking-block {
+        height: 94%;
+    }
+    .car {
+        width: 20.5vw;
+    }
+    .car .car-img {
+        width: 21.5vw;
+    }
+    #four.panel .parking-block {
+        height: 93%;
+    }
+}
+
+@media only screen and (max-width: 1400px) {
+    #title .cloud {
+        width: 28vw;
+        height: 185px;
+        max-height: 185px;
+    }
+    #one.panel .cloud,
+    #two.panel .cloud,
+    #three.panel .cloud,
+    #four.panel .cloud {
+        max-width: 410px;
+        max-height: 200px;
+    }
+    #one.panel .cloud h1,
+    #two.panel .cloud h2,
+    #three.panel .cloud h2,
+    #four.panel .cloud h2 {
+        font-size: 1.35em;
+    }
+    #two.panel .cloud h2,
+    #three.panel .cloud h2,
+    #four.panel .cloud h2 {
+        width: 60%;
+    }
+    #four.panel .parking-block {
+        bottom: -88px;
+        height: 96%;
+    }
+    .car,
+    .car .car-img {
+        width: 21vw;
+    }
+    #five.panel .login-panel {
+        width: 36%;
+        top: 56%;
+    }
+    .form {
+        max-width: 320px;
+    }
+    .form p:nth-child(2) {
+        font-size: 1.5em;
+    }
+    .form p:nth-child(3) {
+        font-size: 1.45em;
+    }
+    .form p:nth-child(4) {
+        font-size: 1.4em;
+    }
+    .form p:nth-child(5) {
+        font-size: 1.35em;
+    }
+    .form p:nth-child(6) {
+        font-size: 1.2em;
+        margin-bottom: 20px;
+    }
+    .login-panel .lights {
+        height: 485px;
+    }
+    .field .form-input {
+        width: calc(100% - 80px);
+        height: 23px;
+        font-size: 12px;
+        margin: 0 0 0px 60px;
+        border-radius: 0 5px 5px 0;
+    }
+    .field i {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        display: block;
+        width: 60px;
+        height: 37px;
+        line-height: 35px;
+        text-align: center;
+        color: #fff;
+        background: rgb(27, 184, 158);
+        background: -moz-linear-gradient(-45deg, rgba(27, 184, 158, 1) 0%, rgba(27, 172, 188, 1) 100%);
+        background: -webkit-linear-gradient(-45deg, rgba(27, 184, 158, 1) 0%, rgba(27, 172, 188, 1) 100%);
+        background: linear-gradient(135deg, rgba(27, 184, 158, 1) 0%, rgba(27, 172, 188, 1) 100%);
+        filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#1bb89e', endColorstr='#1bacbc', GradientType=1);
+        border-radius: 10px 0 0 10px;
+    }
+    .form-nav a {
+        font-size: 0.65em;
+    }
+    span.psw {
+        font-size: 0.75em;
+    }
+    .info-box .cta img {
+        width: 40px;
+        height: 40px;
+    }
+    #one.panel .garage {
+        width: 22vw;
+        max-width: 215px;
+        max-height: 370px;
+    }
+    #five.panel .login-panel {
+        transform: translate(-50%, -45%);
+    }
+    .form .logo {
+        max-width: 200px;
+        display: block;
+        margin: 0 auto 5px;
+    }
+    .home-cloud img {
+        max-width: 160px;
+    }
+}
+
+
+/* Animation */
+
+@include keyframes(bounce) {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        @include transform(translateY(0));
+    }
+    40% {
+        @include transform(translateY(-30px));
+    }
+    60% {
+        @include transform(translateY(-15px));
+    }
+}
+
+.cta img {
+    animation: bounce 2s infinite;
+    -webkit-animation: bounce 2s infinite;
+    -moz-animation: bounce 2s infinite;
+    -o-animation: bounce 2s infinite;
+    @include animation(bounce 3s infinite);
+}
+
+
+/* MOBILE */
+
+@media only screen and (max-width: 990px) {
+    #title .cloud {
+        width: 90vw;
+        max-height: 125px;
+        background-position: center center;
+        background-size: auto 100%;
+    }
+    section {
+        min-height: 480px;
+    }
+    section#title {
+        min-height: 440px;
+    }
+    .cloud.two {
+        display: none;
+    }
+    a.login-btn {
+        top: 20px;
+        right: 5%;
+    }
+    section#title .logo-block {
+        position: fixed;
+        top: 10%;
+        left: 50%;
+        width: 90%;
+    }
+    .car,
+    .car .car-img {
+        width: 53vw;
+        max-width: 300px;
+    }
+    #one.panel .cloud {
+        width: 75%;
+        background-image: url(../img/clouds.svg);
+        background-size: 100% auto;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        opacity: 1;
+    }
+    #first_one.info-box {
+        left: 15%;
+    }
+    #second_one.info-box {
+        left: 35%;
+    }
+    #third_one.info-box {
+        left: 55%;
+    }
+    #two .car,
+    #three .car {
+        right: 0;
+        left: 0;
+        margin: 0 auto;
+        z-index: 25;
+    }
+    #two .station {
+        width: 100vw;
+        background-position: center bottom -25px;
+        max-width: 768px;
+        height: 50%;
+    }
+    #two .station-front {
+        width: 100%;
+        background-image: url('../img/gas-stat-fronts.svg');
+        background-position: center center;
+        background-size: 100% auto;
+        background-repeat: no-repeat;
+        z-index: 150;
+        position: absolute;
+        top: -40%;
+        height: 58vh;
+        max-width: 768px;
+    }
+    #three .elevator {
+        /* position: absolute;
+        z-index: 100;
+        height: 50vh;
+        width: 45vw;
+        bottom: 0;
+        left: 0;
+        transform: translate(55%, 10%); */
+    }
+    #three .elevator {
+        position: absolute;
+        z-index: 100;
+        height: 50vh;
+        width: 100%;
+        bottom: 4%;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        max-height: 30vh;
+        transform: none;
+    }
+    #three .workshop {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        height: 50%;
+        width: 100vw;
+        z-index: 20;
+    }
+    #three .sticky {
+        right: 50px;
+    }
+    #four.panel .parking-block {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-position: bottom -2% left;
+        background-size: 155% auto;
+    }
+    #four .car {
+        right: 0;
+        z-index: 25;
+        left: 25%;
+        margin: 0 auto;
+        bottom: 6%;
+    }
+    .login-panel .lights {
+        height: 77%;
+    }
+    #one.panel .garage {
+        width: 35vw;
+        height: 50vh;
+        background-size: 100% auto;
+        background-position: bottom left;
+        z-index: 35;
+    }
+    .panel .layer1 {
+        background-image: url('../img/1grad.svg');
+        background-size: auto 70vh;
+        background-position: bottom center;
+        background-repeat: no-repeat;
+    }
+    #one .car {
+        left: 20%;
+    }
+    #two.panel .cloud,
+    #three.panel .cloud,
+    #four.panel .cloud {
+        top: 2%;
+        width: 70%;
+        opacity: 1;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        background-size: 100% auto;
+    }
+    #five.panel .login-panel {
+        width: 85%;
+    }
+    .form {
+        max-width: 345px;
+        padding-bottom: 25px;
+    }
+    p.form-nav{
+        text-align: right;
+        display: block;
+        margin-top: 12px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    #four .car .car-img {
+        max-width: 270px;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    .login-panel .lights {
+        height: 75%;
+    }
+    .form {
+        height: 100%;
+        padding-bottom: 20px;
+    }
+    p.form-nav{
+        text-align: right;
+        display: block;
+        margin-top: 12px;
+    }
+    #four.panel .parking-block {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-position: bottom -2% left 25%;
+        background-size: 100% auto;
+        background-image: url(../img/parking-mobile.svg);
+    }
+    #four .car {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .home-cloud {
+        width: 70vw;
+        max-width: 340px;
+    }
+    .logo-text h1 {
+        color: #31B89F;
+        font-size: 1.15em;
+    }
+    .content-space {
+        width: 95%;
+        height: 80%;
+    }
+    .big-panel {
+        width: 88%;
+        height: 78%;
+        top: 55%;
+    }
+    .big-panel h1 {
+        font-size: 1.2em;
+    }
+    .big-panel h2 {
+        font-size: 1.1em;
+    }
+    .big-panel p {
+        font-size: 0.8em;
+        line-height: 1.3em;
+    }
+    .nav-btn {
+        top: 80%;
+    }
+    .go-to img {
+        width: 35px;
+        margin-top: 5%;
+    }
+    #first_one.info-box {
+        bottom: 40%;
+        left: 0;
+    }
+    #second_one.info-box {
+        bottom: 40%;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+    }
+    #third_one.info-box {
+        bottom: 40%;
+        left: unset;
+        right: 0;
+    }
+    .info-box {
+        position: absolute;
+        max-height: 160px;
+        max-width: 180px;
+        height: 100%;
+        width: 100%;
+        z-index: 9999;
+    }
+    .info-box .box {
+        transform: translate(-50%, -50%);
+    }
+    .info-box p {
+        font-size: 0.85em;
+    }
+    .logo-text {
+        width: 63%;
+        height: 50%;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-55%, -5%);
+    }
+    #one.panel .cloud {
+        width: 100%;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        background-image: url(../img/clouds.svg);
+        background-size: 100% auto;
+        opacity: 1;
+    }
+    #one.panel .cloud h1 {
+        transform: translate(-50%, -110%);
+    }
+    #one.panel .cloud h1,
+    #two.panel .cloud h2,
+    #three.panel .cloud h2,
+    #four.panel .cloud h2 {
+        font-size: 1.15em;
+    }
+    .cta {
+        width: 40px;
+        display: block;
+        margin: 0 auto;
+    }
+    #two.panel .cloud {
+        top: 2%;
+        width: 100%;
+        opacity: 1;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        background-size: 100% auto;
+    }
+    #first_two.info-box {
+        bottom: 35%;
+        left: 5%;
+    }
+    #second_two.info-box {
+        bottom: 35%;
+        right: 5%;
+    }
+    #second_two.info-box span {
+        font-size: 0.85em;
+    }
+    #two.panel .cloud h2 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -100%);
+        color: #31B89F;
+        font-weight: bold;
+        text-align: center;
+    }
+    #three.panel .cloud h2 {
+        transform: translate(-50%, -100%);
+    }
+    #three.panel .cloud {
+        position: absolute;
+        top: 2%;
+        width: 100%;
+        opacity: 1;
+        background-size: 100% auto;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+    }
+    #first_three.info-box {
+        left: 0;
+        bottom: 30%;
+        right: 0;
+        margin: 0 auto;
+    }
+    #first_three.info-box .box {
+        transform: translate(-50%, -50%);
+    }
+    #three .sticky {
+        position: absolute;
+        top: 30%;
+        right: unset;
+        height: 100%;
+        width: 100%;
+        max-width: 140px;
+        max-height: 175px;
+        left: 5%;
+    }
+    .sticky p.title {
+        font-size: 0.8em;
+    }
+    .sticky .list {
+        text-align: left;
+        margin: 10px 0 0 20%;
+    }
+    .sticky .list i.material-icons {
+        font-size: 1.2em;
+    }
+    .sticky .list span {
+        font-size: 0.75em;
+    }
+    #three .elevator {
+        max-height: 150px;
+    }
+    #four.panel .parking-block {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-position: bottom -2% left 25%;
+        background-size: 100% auto;
+        background-image: url(../img/parking-mobile.svg);
+    }
+    #four.panel .cloud {
+        top: 2%;
+        width: 100%;
+        opacity: 1;
+        background-size: 100% auto;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+    }
+    #four.panel .cloud h2 {
+        transform: translate(-50%, -100%);
+    }
+    #five.panel .login-panel {
+        width: 99%;
+    }
+    .form .container {
+        margin-top: 0;
+    }
+}
+
+@media only screen and (max-width:380px) {
+    #five.panel .login-panel {
+        height: 100%;
+        min-height: 480px;
+    }
+    .login-panel .lights {
+        background: none;
+    }
+    .form {
+        width: 85%;
+    }
+    .home-cloud img {
+        max-width: 120px;
+    }
+    .big-panel h2 {
+        font-size: 1.2em;
+    }
+}
+
+@media only screen and (max-width:360px) and (max-height: 480px) {
+    .login-panel .lights {
+        height: 80%;
+    }
+}
+
+
+/* Control block 
+
+@media only screen and (max-width: 990px) {
+    #one {
+        background-color: red;
+    }
+    #two {
+        background-color: blue;
+    }
+    #three {
+        background-color: violet;
+    }
+    #four {
+        background-color: yellow;
+    }
+}*/

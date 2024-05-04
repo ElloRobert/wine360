@@ -1,0 +1,5 @@
+Dodati novu ulogu organizator eenata 
+Dodati da moze dodati event 
+Na event moze pozvati izlagace 
+Izlagaci prilikom prihvacanja poziva za event dobijaju obrazac koji tebeaju popuniti te unutar tog obrazca moraju odabrati koja vina ce poslati na izlaganja 
+Nakon odabira vina za vina se kreiraju jednokratni qr kodovi za evenat pomocu kojega posjetitelji vina mogu ocjenjivati određeno vino na tom eventu odnosno ostaviti svoju recenziju, recenzije mozemo podjeliti na profesionalne i amaterske

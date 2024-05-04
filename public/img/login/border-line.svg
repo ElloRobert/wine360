@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="358.78px" height="1.875px" viewBox="0 0 358.78 1.875" enable-background="new 0 0 358.78 1.875" xml:space="preserve">
+<g>
+	<defs>
+		<path id="SVGID_1_" d="M6.428,0.135c-3.549,0-6.426,0.363-6.426,0.81c0,0.447,2.877,0.809,6.426,0.809h345.929
+			c3.548,0,6.424-0.362,6.424-0.809c0-0.447-2.876-0.81-6.424-0.81H6.428z"/>
+	</defs>
+	<clipPath id="SVGID_2_">
+		<use xlink:href="#SVGID_1_"  overflow="visible"/>
+	</clipPath>
+	
+		<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="-780.0024" y1="541.0156" x2="-779.0024" y2="541.0156" gradientTransform="matrix(358.7802 0 0 -358.7802 279849.3125 194106.9063)">
+		<stop  offset="0" style="stop-color:#2FB29B"/>
+		<stop  offset="0.3459" style="stop-color:#2FB29B"/>
+		<stop  offset="1" style="stop-color:#19A0DB"/>
+	</linearGradient>
+	<rect x="0.001" y="0.135" clip-path="url(#SVGID_2_)" fill="url(#SVGID_3_)" width="358.779" height="1.619"/>
+</g>
+</svg>

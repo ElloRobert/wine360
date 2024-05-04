@@ -1,0 +1,29 @@
+<div class="modal" id="confirm" >
+	<div class="modal-dialog">
+		<div class="modal-content model-content-delete">
+			<div class="modal-header" style="border: none;">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><img src="<?php echo e(asset('img/interface/close.svg')); ?>"></button>
+				<h3 class="modal-title model-title-delete"><?php echo e(trans('winery.deleteConfirmation')); ?></h3>
+			</div>
+			<div class="modal-body">
+				<div class="row marginTop tekst" style="display: flex; justify-content: center; align-items: center;">
+					<p><?php echo e(trans('winery.deleteConfirmationText')); ?></p>
+				</div>
+					<div style="display: flex; justify-content: center; align-items: center;">
+					<div class="row">
+						<div class="col-md-2"></div>
+							<form id="malfunction-delete-form" method="POST" action="">
+								<?php echo e(csrf_field()); ?>
+
+								<?php echo e(method_field('DELETE')); ?>
+
+								<input style="float: right;" type="submit" class="btn  gumbObrisi" value="<?php echo e(trans('winery.delete')); ?>">
+							</form>
+						<div class="col-md-2"></div>
+						<div class="col-md-2"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div><?php /**PATH C:\Projekti\wine360\resources\views/winery/confirmModal.blade.php ENDPATH**/ ?>
