@@ -1,6 +1,11 @@
 ## Wine360
 
-Nakon instalacije Composer-a, potrebno je pokrenuti naredbu
-> php artisan passport:keys
+Upute za pruzimanje projekta s gita:
 
-za generiranje oauth-public.key i oauth-oublic.key
+Pozicioniras se u mapu gdje zelis klonirati projekt otvoris gitbash i pokrenes ovo: git clone https://github.com/ElloRobert/wine360.git
+Nakon što je naredba izvršena otvoris projekt u vs codu porebno ga je kompajlirati to radis ovako:
+composer install
+prilagodba .env file-a kopiras ga iz onog projekta kojeg vec imas kod sebe na racunalu 
+npm install
+npm run dev (ili prod, ovisi o okruženju)
+Kreiras u wampu virtualni server za ovaj projekt 
