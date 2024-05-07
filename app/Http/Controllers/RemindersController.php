@@ -14,6 +14,7 @@ use App\Mail\RemindersMail;
 use App\Priority;
 use App\RecurringReminder;
 use App\Supplier;
+use App\User;
 use App\VehicleGroup;
 use Illuminate\Support\Facades\Auth;
 
@@ -44,7 +45,6 @@ class RemindersController extends Controller
        
        
         $this->validate($request, [
-            'vl' => 'required|exists:vehicles,id',
             'reminder_name' => 'required',
             'reminder_details' => 'required',
             'reminder_date' => 'required',
@@ -52,32 +52,17 @@ class RemindersController extends Controller
         
         $user = $request->user();
       
-        if ($user->hasAnyRole(['private', 'legal'])) {
-            if (!$user->ownsVehicle($request->get('vl'))) {
-                // TODO: dodati prikaz 'message-error' iz sesije u view
-                return Redirect::back()->with('message-error', trans('default.notAllowedChooseVehicle'));
-            }
-
-        } else if ($user->hasRole('employee')) {
-            if (!$user->legalEntityUser->ownsVehicle($request->get('vl'))) {
-                // TODO: dodati prikaz 'message-error' iz sesije u view
-                return Redirect::back()->with('message-error', trans('default.notAllowedChooseVehicle'));
-            }
-        }
-      
+       
         $category = $request->get('add_reminder_category') ?: $request->get('reminder_category');
         $reminder = Reminder::create([
             'name' => $request->get('reminder_name'),
-            'category' => $category,
+            'category' => 1,
             'details' => $request->get('reminder_details'),
             'end_date_reminder' => Carbon::parse($request->get('reminder_date')),
             'creator_id' => $user->id,
             'reminder_priority' => $request->get('reminder_priority'),
             'recurring_reminder_id' => $request->recurring_reminder_id
         ]);
-
-         // Povežite vozila sa održavanjem preko pivot tabele
-         $reminder->vehicles()->attach($request->vl);
          $reminder->save();
          //dd($reminder);
         $msg = trans('default.reminderCompleteStore');
@@ -274,7 +259,7 @@ class RemindersController extends Controller
     public function getReminders(Request $request)
     {
         $columns = array(
-            0 => 'vehicles.name',
+            0 => 'id',
             1 => 'name',
             2 => 'vehicle_image_position',
             3 => 'end_date_reminder',
@@ -284,19 +269,27 @@ class RemindersController extends Controller
         );
     
         $user = Auth::user();
-    
+        
+        if ($user->hasRole('admin')) {
+            $users_list = User::all();
+        } else if ($user->hasAnyRole(['legal', 'private'])) {
+            $configuration = Configuration::find($user->companyConfiguration->id);
+            $users_list = $configuration->users;
+        } else if ($user->hasRole('employee')) {
+            $users_list = $user->id;
+        } else {
+            $users_list = collect();
+        }
+
         $query = Reminder::query()
                             ->leftJoin('reminder_vehicle', 'reminder_vehicle.reminder_id', '=', 'reminders.id')
-                            ->leftJoin('vehicles', 'vehicles.id', '=', 'reminder_vehicle.vehicle_id')
                             ->leftJoin('users as creators', 'creators.id', '=', 'reminders.creator_id')
-                            ->leftJoin('vehicles_malfunction', 'vehicles_malfunction.id', '=', 'reminders.malfunction_id')
-                            ->leftJoin('vehicles_maintenance', 'vehicles_maintenance.id', '=', 'reminders.maintenance_id')
+                            ->whereIn('reminders.creator_id', $users_list->pluck('id'))
                             ->select(
                                 'reminders.*',
-                                'vehicles.name as vehicle_name',
-                                'vehicles.id as vehicle_id',
                                 'creators.name as creator_name'
                             );
+
         $totalData = $query->count();
     
         $totalFiltered = $totalData;

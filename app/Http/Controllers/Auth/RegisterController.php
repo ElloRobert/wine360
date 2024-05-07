@@ -57,11 +57,7 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
-        if ($data['reg_type'] != ''){
-            Session::put('session_reg_type', $data['reg_type']);
-        } else {
-            Session::put('session_reg_type', 0);
-        }
+      
         
         return Validator::make($data, [
             'name' => 'required|max:255',
@@ -83,10 +79,8 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-     
-        $privateRole = Role::whereSlug('private')->first();
+    
         $legalRole = Role::whereSlug('legal')->first();
-        if ($data['reg_type'] == 2) {
             $user = User::create([
                 'name' => $data['name'],
                 'email' => $data['email'],
@@ -107,53 +101,6 @@ class RegisterController extends Controller
             $user->configuration_id = $reg_user_config->id;
             $user->save();
 
-            $subcategory1 = VehicleGroup::create([
-                'name' => 'Management',
-                'supercategory' => '3',
-                'created_at' => now(),
-                'updated_at' => now(),
-                'configuration_id' => $reg_user_config->id,
-            ]);
-
-            $subcategory2 = VehicleGroup::create([
-                'name' => 'Marketing',
-                'supercategory' => '3',
-                'created_at' => now(),
-                'updated_at' => now(),
-                'configuration_id' => $reg_user_config->id,
-            ]);
-
-            $subcategory3 = VehicleGroup::create([
-                'name' => 'Sales',
-                'supercategory' => '3',
-                'created_at' => now(),
-                'updated_at' => now(),
-                'configuration_id' => $reg_user_config->id,
-            ]);
-
-            $subcategory4 = VehicleGroup::create([
-                'name' => 'Logistic',
-                'supercategory' => '3',
-                'created_at' => now(),
-                'updated_at' => now(),
-                'configuration_id' => $reg_user_config->id,
-            ]);
-
-            $subcategory5 = VehicleGroup::create([
-                'name' => 'Maintenance',
-                'supercategory' => '3',
-                'created_at' => now(),
-                'updated_at' => now(),
-                'configuration_id' => $reg_user_config->id,
-            ]);
-
-            $subcategory6 = VehicleGroup::create([
-                'name' => 'Production',
-                'supercategory' => '3',
-                'created_at' => now(),
-                'updated_at' => now(),
-                'configuration_id' => $reg_user_config->id,
-            ]);
 
             $redirect = 'http://Wine360.eu'; //change this field to app home page
             $client = (new Client)->forceFill([
@@ -169,88 +116,6 @@ class RegisterController extends Controller
             $client->save();
 
             return $user;
-            
-        } else if ($data['reg_type'] == 4) {
-            $user = User::create([
-                'name' => $data['name'],
-                'email' => $data['email'],
-                'password' => bcrypt($data['password']),
-                'company' => NULL,
-                'oib' => NULL,
-                'address' => $data['address'],
-                'city' => $data['city'],
-            ]);
-            $user->attachRole($privateRole);
-
-            $reg_user_config = Configuration::create();
-            $reg_user_config->user()->associate($user);
-            $reg_user_config->save();
-
-            $subcategory1 = VehicleGroup::create([
-                'name' => 'Management',
-                'supercategory' => '3',
-                'created_at' => now(),
-                'updated_at' => now(),
-                'configuration_id' => $reg_user_config->id,
-            ]);
-
-            $subcategory2 = VehicleGroup::create([
-                'name' => 'Marketing',
-                'supercategory' => '3',
-                'created_at' => now(),
-                'updated_at' => now(),
-                'configuration_id' => $reg_user_config->id,
-            ]);
-
-            $subcategory3 = VehicleGroup::create([
-                'name' => 'Sales',
-                'supercategory' => '3',
-                'created_at' => now(),
-                'updated_at' => now(),
-                'configuration_id' => $reg_user_config->id,
-            ]);
-
-            $subcategory4 = VehicleGroup::create([
-                'name' => 'Logistic',
-                'supercategory' => '3',
-                'created_at' => now(),
-                'updated_at' => now(),
-                'configuration_id' => $reg_user_config->id,
-            ]);
-
-            $subcategory5 = VehicleGroup::create([
-                'name' => 'Maintenance',
-                'supercategory' => '3',
-                'created_at' => now(),
-                'updated_at' => now(),
-                'configuration_id' => $reg_user_config->id,
-            ]);
-
-            $subcategory6 = VehicleGroup::create([
-                'name' => 'Production',
-                'supercategory' => '3',
-                'created_at' => now(),
-                'updated_at' => now(),
-                'configuration_id' => $reg_user_config->id,
-            ]);
-
-            $redirect = 'http://Wine360.eu'; //change this field to app home page
-            $client = (new Client)->forceFill([
-                'user_id' => $user->id,
-                'name' => $user->name . 'password',
-                'secret' => str_random(40),
-                'redirect' => $redirect,
-                'personal_access_client' => false,
-                'password_client' => true,
-                'revoked' => false,
-            ]);
-
-            $client->save();
-
-            return $user;
-
-        } else {
-            return Redirect::back();
         }
-    }
+            
 }

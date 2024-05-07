@@ -114,7 +114,11 @@ class ConfigurationController extends Controller
     
 
             // Izvrši left join s tablicom 'configurations'
-        $query = Configuration::select('configuration.*');
+        if ($current_user->hasRole('admin')) {
+            $query = Configuration::select('configuration.*');
+        } else if ($current_user->hasAnyRole(['legal', 'private'])) {
+            $query = Configuration::where('user_id',$current_user->id)->select('configuration.*');
+        }
     
 
     
@@ -214,7 +218,7 @@ class ConfigurationController extends Controller
                             <img src="' .  asset('img/interface/vidiLozinku.svg') .'">
                         </a>
                         <a href="/winery/qr/'.$winery->id .'" id="reminders" class="btn" title="Vidi qr kod proizvoda">
-                            <img src="' .  asset('img/interface/vidiLozinku.svg') .'">
+                            <i class="fa-solid fa-qrcode" style="color:#717171"></i>
                         </a>
 
                     

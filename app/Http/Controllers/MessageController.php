@@ -112,41 +112,6 @@ class MessageController extends Controller
         }
         
 
-        // // Filteri
-		// $statusFilter = $request->input('statusFilter');
-		// if (!empty($statusFilter)) {
-		// 	$vehicles->where('vehicle_status_id', $statusFilter);
-		// }
-
-		// $grupaVozilaFilter = $request->input('grupaVozilaFilter');
-		// if (!empty($grupaVozilaFilter)) {
-		// 	$vehicles->where('vehicle_groups.id', $grupaVozilaFilter);
-		// }
-
-		// $podkategorijaFilter = $request->input('podkategorijaFilter');
-		// if (!empty($podkategorijaFilter)) {
-		// 	$vehicles->where('vehicles.subcategory_id', $podkategorijaFilter);
-		// }
-        
-        // $categoryFilter = $request->input('categoryFilter');
-        
-		// if (!empty($categoryFilter)) {
-		// 	$vehicles->where('vehicle_category_id', $categoryFilter);
-		// }
-
-		// $markaFilter = $request->input('markaFilter');
-		// if (!empty($markaFilter)) {
-		// 	$vehicles->where('make_id', $markaFilter);
-		// }
-
-        // $modelFilter = $request->input('modelFilter');
-		// if (!empty($modelFilter)) {
-		// 	$vehicles->where('vehicles.model', $modelFilter);
-		// }
-        // $propertyFilter = $request->input('propertyFilter');
-		// if (!empty($propertyFilter)) {
-		// 	$vehicles->where('vehicle_property_id', $propertyFilter);
-		// }
 		
         $messages = $messages->groupBy('messages.id')
         ->offset($start)
@@ -164,15 +129,16 @@ class MessageController extends Controller
             if($current_user->hasRole('admin|private|legal')){
                 $nestedData[] = '
                     <div class="equal-size-buttons">
-                        <button onclick="editWine(' . $message->id . ')" class="btn" data-toggle="tooltip" data-placement="top" title="Uredi">
+                        <button onclick="editMessage(' . $message->id . ')" class="btn" data-toggle="tooltip" data-placement="top" title="Pregledaj poruku">
                             <img src="' .  asset('img/interface/vidiLozinku.svg') .'">
                         </button>
-                        <button onclick="deleteWine(' . $message->id  . ')" class="btn"  title="Obriši">
+                        <button onclick="deleteMessage(' . $message->id  . ')" class="btn"  title="Obriši">
                             <img src="' . asset('img/interface/kanta.svg') . '" >
                         </button>
-                        <a href="/wines/product/'.$message->id .'" id="reminders" class="btn" title="Stranica proizvoda">
-                            <img src="' .  asset('img/interface/vidiLozinku.svg') .'">
-                        </a>
+                        <button onclick="messageReply(' . $message->id  . ')" class="btn"  title="Odgovori na poruku">
+                            <img src="' . asset('img/interface/uredi.svg') . '">
+                        </button>
+                       
                     </div>';
             }else{
                 $nestedData[] = '<div class="equal-size-buttons">
@@ -222,5 +188,24 @@ class MessageController extends Controller
             // Ako se dogodila greška pri spremanju, vraćamo odgovor s greškom
             return Redirect::back();
         }
+    }
+
+    public function details(Request $request)
+    {
+        $id = $request->id;
+        
+        $message = Message::findOrFail($id);
+       
+        return $message;
+    }
+
+    public function delete($id)
+    {
+        $message = Message::find($id);
+        if (!$message instanceof message) {
+            return Redirect::back();
+        }
+        $message->delete();
+        return redirect()->route('messages.index');
     }
 }

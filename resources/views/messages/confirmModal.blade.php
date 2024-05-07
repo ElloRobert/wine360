@@ -3,11 +3,11 @@
 		<div class="modal-content model-content-delete">
 			<div class="modal-header" style="border: none;">
 				<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><img src="{{ asset('img/interface/close.svg') }}"></button>
-				<h3 class="modal-title model-title-delete">{{ trans('wines.deleteConfirmation') }}</h3>
+				<h3 class="modal-title model-title-delete">Obriši upit</h3>
 			</div>
 			<div class="modal-body">
 				<div class="row marginTop tekst" style="display: flex; justify-content: center; align-items: center;">
-					<p>{{ trans('wines.deleteConfirmationText') }}</p>
+					<p>Jeste li sigurni da želite obrisati upit?</p>
 				</div>
 					<div style="display: flex; justify-content: center; align-items: center;">
 					<div class="row">

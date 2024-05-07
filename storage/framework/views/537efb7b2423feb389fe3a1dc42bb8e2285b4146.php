@@ -121,39 +121,6 @@
             <img src="<?php echo e(asset('img/interface/zvonce.svg')); ?>" class="smanjena-slika" id="zvonce">
           </a> 
         </li>
-        <li class="dropdown mr-15">
-          <img src="<?php echo e(asset('img/interface/slikaI.svg')); ?>" class="smanjena-slika" id="slikaI">
-          <ul class="padajuci-izbornik" id="ipadajuciIzbornik">
-            <li class="iElementiIzbornika">
-              <div>
-                <a href="https://www.ofir.hr/" id="fuel" class="elementIzbornika">
-                  <span>Korisnički centar</span>
-                </a>
-              </div>
-            </li>
-            <li class="iElementiIzbornika">
-              <div>
-                <a href="https://www.ofir.hr/" id="fuel" class="elementIzbornika">
-                  <span>Online trening</span>
-                </a>
-              </div>
-            </li>
-            <li class="iElementiIzbornika">
-              <div>
-                <a href="https://www.ofir.hr/" id="fuel" class="elementIzbornika">
-                  <span>Kontaktiraj podršku</span>
-                </a>
-              </div>
-            </li>
-            <li class="iElementiIzbornika">
-              <div>
-                <a href="https://www.ofir.hr/" id="fuel" class="elementIzbornika">
-                  <span>Feedback</span>
-                </a>
-              </div>
-            </li>
-          </ul>
-        </li>
         <li class="dropdown mr-25">
           <img src="<?php echo e(asset('img/interface/plus.svg')); ?>" class="smanjena-slika" id="plus">
           <ul class="padajuci-izbornik" id="padajuciIzbornik">
@@ -187,36 +154,36 @@
       <li class="mt-5" id="dashboardTab">
         <a href="<?php echo e(url('/home')); ?>" class="poravnajne" id="dashboard">
            <img src="<?php echo e(asset('img/interface/radnaPloca.svg')); ?>" class="smanjena-slika" id="dashboard">
-          <span class="ml-15" ><?php echo e(trans('default.dashboard')); ?></span>
+          <span class="ml-15"><?php echo e(trans('default.dashboard')); ?></span>
         </a>
       </li>
       <li class="mt-5" id="wineryTab">
         <a href="<?php echo e(route('winery.index')); ?>"  id="wineryTab">
-          <img src="<?php echo e(asset('img/interface/vozila.svg')); ?>" class="smanjena-slika">
+          <i class="fa-regular fa-building  " style="color: #590C13; margin-left: 8px;" class="smanjena-slika"></i>
           <span class="ml-15"><?php echo e(trans('default.winery')); ?></span>
         </a>
       </li>
       <li class="mt-5 " id="winesTab">
         <a href="<?php echo e(route('wines.index')); ?>" id="wines">
-          <img src="<?php echo e(asset('img/interface/vozila.svg')); ?>" class="smanjena-slika" >
+          <i class="fa-solid fa-wine-bottle " style="color: #590C13; margin-left: 8px;" ></i>
           <span class="ml-15" ><?php echo e(trans('default.wines')); ?></span>
         </a>
       </li>
       <li class="mt-5" id="messagesTab">
         <a href="<?php echo e(route('messages.index')); ?>" id="messages">
-          <img src="<?php echo e(asset('img/interface/messages.svg')); ?>" class="smanjena-slika">
-          <span><?php echo e(trans('default.messages')); ?></span>
+          <i class="fa-regular fa-envelope" style="color: #590C13; margin-left: 8px;" ></i>
+          <span class="ml-15"><?php echo e(trans('default.messages')); ?></span>
         </a>
       </li>
       <li class="mt-5" id="remindersTab">
         <a href="<?php echo e(route('reminders.index')); ?>" id="reminders">
-          <img src="<?php echo e(asset('img/interface/reminders.svg')); ?>" class="smanjena-slika">
-          <span><?php echo e(trans('default.reminders')); ?></span>
+          <i class="fa-regular fa-clock" style="color: #590C13; margin-left: 8px;"></i>
+          <span class="ml-15"><?php echo e(trans('default.reminders')); ?></span>
         </a>
       </li>
       <li class="mt-5"  id="usersTab">
         <a href="<?php echo e(url('/users')); ?>" class="poravnajne" id="users">
-          <img src="<?php echo e(asset('img/interface/korisnici.svg')); ?>" class="smanjena-slika">
+          <i class="fa-solid fa-users" style="color: #590C13; margin-left: 8px;"></i>
           <span class="ml-15"><?php echo e(trans('default.users')); ?></span>
         </a>
       </li>

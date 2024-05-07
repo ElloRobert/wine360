@@ -73,6 +73,7 @@
             <div class="card-body">
                 <div class="qr-code-container" style="background-color: #fff; padding: 1rem;">
                     {!!$wine->qr !!}
+                    <input  type="text" name="qrcode" id="qrcode" value="{{$wine->qr }}" hidden/>
                 </div>
                 <p class="mt-3">Ovaj QR kod vodi korisnika na xy adresu</p>
             </div>
@@ -82,20 +83,28 @@
         </div>
     </div>
 </body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script>
-    document.getElementById('downloadBtn').addEventListener('click', function () {
-        axios.get('/path/to/download/qrcode')
+     $(document).ready(function () {
+        $('#downloadBtn').click(function () {
+            var qrcode = $('#qrcode').val();
+            axios.get('/path/to/download/qrcode', {
+                params: {
+                    qrcode: qrcode,
+                }
+            })
             .then(function (response) {
-                // Create a link element
+                // Kreiranje link elementa
                 var link = document.createElement('a');
-                link.href = 'data:image/svg+xml;base64,' + btoa(response.data); 
-                link.download = 'qrcode.svg'; 
-                link.click(); 
+                link.href = 'data:image/svg+xml;base64,' + btoa(response.data); // Pretvaranje SVG u base64
+                link.download = 'qrcode.svg'; // Postavljanje atributa za preuzimanje
+                link.click(); // Pokretanje događaja klika za započinjanje preuzimanja
             })
             .catch(function (error) {
-                console.error('Error downloading QR code:', error);
+                console.error('Greška pri preuzimanju QR koda:', error);
             });
+        });
     });
 </script>
 </html>

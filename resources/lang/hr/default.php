@@ -41,7 +41,7 @@ return [
     'removeEmployee' => 'Obrišite djelatnika',
 
     // Sidebar
-    'dashboard' => 'Radna ploča',
+    'dashboard' => 'Početak rada',
     'wines' => 'Vina',
     'winery' => 'Vinarija',
     'fields' => 'Poljoprivredne površine',

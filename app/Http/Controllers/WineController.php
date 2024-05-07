@@ -345,43 +345,6 @@ class WineController extends Controller
                              ->limit($limit)
                              ->orderBy($order, $dir);
         }
-        
-
-        // // Filteri
-		// $statusFilter = $request->input('statusFilter');
-		// if (!empty($statusFilter)) {
-		// 	$vehicles->where('vehicle_status_id', $statusFilter);
-		// }
-
-		// $grupaVozilaFilter = $request->input('grupaVozilaFilter');
-		// if (!empty($grupaVozilaFilter)) {
-		// 	$vehicles->where('vehicle_groups.id', $grupaVozilaFilter);
-		// }
-
-		// $podkategorijaFilter = $request->input('podkategorijaFilter');
-		// if (!empty($podkategorijaFilter)) {
-		// 	$vehicles->where('vehicles.subcategory_id', $podkategorijaFilter);
-		// }
-        
-        // $categoryFilter = $request->input('categoryFilter');
-        
-		// if (!empty($categoryFilter)) {
-		// 	$vehicles->where('vehicle_category_id', $categoryFilter);
-		// }
-
-		// $markaFilter = $request->input('markaFilter');
-		// if (!empty($markaFilter)) {
-		// 	$vehicles->where('make_id', $markaFilter);
-		// }
-
-        // $modelFilter = $request->input('modelFilter');
-		// if (!empty($modelFilter)) {
-		// 	$vehicles->where('vehicles.model', $modelFilter);
-		// }
-        // $propertyFilter = $request->input('propertyFilter');
-		// if (!empty($propertyFilter)) {
-		// 	$vehicles->where('vehicle_property_id', $propertyFilter);
-		// }
 		
         $wines = $wines->groupBy('wines.id')
         ->offset($start)
@@ -411,7 +374,7 @@ class WineController extends Controller
                             <img src="' .  asset('img/interface/vidiLozinku.svg') .'">
                         </a>
                         <a href="/wines/qr/'.$wine->id .'" id="reminders" class="btn" title="Vidi qr kod proizvoda">
-                        <img src="' .  asset('img/interface/vidiLozinku.svg') .'">
+                        <i class="fa-solid fa-qrcode" style="color:#717171"></i>
                     </a>
 
                     

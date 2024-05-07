@@ -59,6 +59,9 @@
     
     <link rel="stylesheet" href="<?php echo e(asset('css/scripts/jquery-ui.css')); ?>" />
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-TLFSGK7ZrbTpH9wB4BtLq2iV4ca5I/kZrHD91U5xN3AvJ3dcr4jzZl3zT9liztKb" crossorigin="anonymous">
+
+
     <script type="text/javascript">
         $.fn.select2.defaults.set('theme', 'bootstrap');
 

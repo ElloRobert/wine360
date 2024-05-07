@@ -219,25 +219,20 @@ Route::group(['middleware' => ['auth', 'locale']], function () {
 			'as' => 'messages.index',
 			'uses' => 'MessageController@index'
 		]);
+		Route::post('/details', [
+			'as' => 'messages.details',
+			'uses' => 'MessageController@details'
+		]);
 
-		// Route::post('/details', [
-		// 	'as' => 'messages.details',
-		// 	'uses' => 'ConfigurationController@details'
-		// ]);
-
-		// Route::delete('/{id}', [
-		// 	'as' => 'winery.delete',
-		// 	'uses' => 'ConfigurationController@delete'
-		// ]);
-
-	
+		Route::delete('/{id}', [
+			'as' => 'messages.delete',
+			'uses' => 'MessageController@delete'
+		]);
 
 		Route::get('/get-messages', [
 			'as' => 'getMessages',
 			'uses' => 'MessageController@getMessages'
 		]);
-
-
 	});
     
     /**

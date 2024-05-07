@@ -133,20 +133,21 @@
         </ul>
         <div class="container">
           <div class="row mt-5">
-           <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-4 filter slavonijaPodunavlje">
-          <div class="card">
-            <img src="img/vinarije/belje.png" class="card-img-top" alt="Vinarija Belje" />
-            <div class="card-body">
-              <h5 class="card-title">Vinarija Belje</h5>
-              <p class="card-text">Slavonija i Podunavlje</p>
-              <a href="singleVinarija.html" class="btn btn-warning font-weight-bold">Istraži</a>
+
+          <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-4 filter slavonijaPodunavlje">
+            <div class="card">
+              <img src="<?php echo e(asset('img/interface/vinoMockup.png')); ?>" class="card-img-top" alt="Vino 3" />
+              <div class="card-body">
+                <h5 class="card-title">Vinarija Belje</h5>
+                <p class="card-text">Slavonija i Podunavlje</p>
+                <a href="singleVinarija.html" class="btn btn-warning font-weight-bold">Istraži</a>
+              </div>
             </div>
           </div>
-        </div>
         <!-- Vinarija Bubrig -->
         <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-4 filter bregovitaHrvatska">
           <div class="card">
-            <img src="img/vinarije/bubrig-removebg-preview.png" class="card-img-top" alt="Vinarija Bubrig" />
+            <img src="<?php echo e(asset('img/interface/vinoMockup.png')); ?>" class="card-img-top" alt="Vino 3" />
             <div class="card-body">
               <h5 class="card-title">Vinarija Bubrig</h5>
               <p class="card-text">Bregovita Hrvatska</p>
@@ -157,7 +158,7 @@
         <!-- Vinarija Deak -->
         <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-4 filter istraKvarner">
           <div class="card">
-            <img src="img/vinarije/deak-removebg-preview.png" class="card-img-top" alt="Vinarija Deak" />
+            <img src="<?php echo e(asset('img/interface/vinoMockup.png')); ?>" class="card-img-top" alt="Vino 3" />
             <div class="card-body">
               <h5 class="card-title">Vinarija Deak</h5>
               <p class="card-text">Istra i Kvarner</p>
@@ -168,7 +169,7 @@
         <!-- Vinarija Deak (ponovljena) -->
         <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-4 filter dalmacija">
           <div class="card">
-            <img src="img/vinarije/deak-removebg-preview.png" class="card-img-top" alt="Vinarija Deak" />
+            <img src="<?php echo e(asset('img/interface/vinoMockup.png')); ?>" class="card-img-top" alt="Vino 3" />
             <div class="card-body">
               <h5 class="card-title">Vinarija Deak</h5>
               <p class="card-text">Dalmacija</p>
@@ -179,7 +180,7 @@
         <!-- Vinarija Jakob -->
         <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-4 filter slavonijaPodunavlje">
           <div class="card">
-            <img src="img/vinarije/jakob-removebg-preview.png" class="card-img-top" alt="Vinarija Jakob" />
+            <img src="<?php echo e(asset('img/interface/vinoMockup.png')); ?>" class="card-img-top" alt="Vino 3" />
             <div class="card-body">
               <h5 class="card-title">Vinarija Jakob</h5>
               <p class="card-text">Slavonija i Podunavlje</p>
@@ -190,7 +191,7 @@
         <!-- Vinarija Kalažić -->
         <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-4 filter bregovitaHrvatska">
           <div class="card">
-            <img src="img/vinarije/kalazic.png" class="card-img-top" alt="Vinarija Kalažić" />
+            <img src="<?php echo e(asset('img/interface/vinoMockup.png')); ?>" class="card-img-top" alt="Vino 3" />
             <div class="card-body">
               <h5 class="card-title">Vinarija Kalažić</h5>
               <p class="card-text">Bregovita Hrvatska</p>
@@ -201,7 +202,7 @@
         <!-- Vinarija Siber -->
         <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-4 filter dalmacija">
           <div class="card">
-            <img src="img/vinarije/siber.png" class="card-img-top" alt="Vinarija Siber" />
+            <img src="<?php echo e(asset('img/interface/vinoMockup.png')); ?>" class="card-img-top" alt="Vino 3" />
             <div class="card-body">
               <h5 class="card-title">Vinarija Siber</h5>
               <p class="card-text">Dalmacija</p>
@@ -212,7 +213,7 @@
         <!-- Vinarija Szabo -->
         <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-4 filter slavonijaPodunavlje">
           <div class="card">
-            <img src="img/vinarije/szabo.png" class="card-img-top" alt="Vinarija Szabo" />
+            <img src="<?php echo e(asset('img/interface/vinoMockup.png')); ?>" class="card-img-top" alt="Vino 3" />
             <div class="card-body">
               <h5 class="card-title">Vinarija Szabo</h5>
               <p class="card-text">Slavonija i Podunavlje</p>
@@ -223,7 +224,7 @@
         <!-- Vinarija Tošić -->
         <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-4 filter istraKvarner">
           <div class="card">
-            <img src="img/vinarije/tosic-removebg-preview.png" class="card-img-top" alt="Vinarija Tošić" />
+            <img src="<?php echo e(asset('img/interface/vinoMockup.png')); ?>" class="card-img-top" alt="Vino 3" />
             <div class="card-body">
               <h5 class="card-title">Vinarija Tošić</h5>
               <p class="card-text">Istra i Kvarner</p>
@@ -234,7 +235,7 @@
         <!-- Vinarija Vinković -->
         <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-4 filter bregovitaHrvatska">
           <div class="card">
-            <img src="img/vinarije/vinkovic-removebg-preview.png" class="card-img-top" alt="Vinarija Vinković" />
+            <img src="<?php echo e(asset('img/interface/vinoMockup.png')); ?>" class="card-img-top" alt="Vino 3" />
             <div class="card-body">
               <h5 class="card-title">Vinarija Vinković</h5>
               <p class="card-text">Bregovita Hrvatska</p>
@@ -245,7 +246,7 @@
         <!-- Vinarija Zabić -->
         <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-4 filter dalmacija">
           <div class="card">
-            <img src="img/vinarije/zabic-removebg-preview.png" class="card-img-top" alt="Vinarija Zabić" />
+            <img src="<?php echo e(asset('img/interface/vinoMockup.png')); ?>" class="card-img-top" alt="Vino 3" />
             <div class="card-body">
               <h5 class="card-title">Vinarija Zabić</h5>
               <p class="card-text">Dalmacija</p>
@@ -255,7 +256,7 @@
         </div>
          <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-4 filter slavonijaPodunavlje">
           <div class="card">
-            <img src="img/vinarije/belje.png" class="card-img-top" alt="Vinarija Belje" />
+            <img src="<?php echo e(asset('img/interface/vinoMockup.png')); ?>" class="card-img-top" alt="Vino 3" />
             <div class="card-body">
               <h5 class="card-title">Vinarija Belje</h5>
               <p class="card-text">Slavonija i Podunavlje</p>
@@ -266,7 +267,7 @@
         <!-- Vinarija Bubrig -->
         <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-4 filter bregovitaHrvatska">
           <div class="card">
-            <img src="img/vinarije/bubrig-removebg-preview.png" class="card-img-top" alt="Vinarija Bubrig" />
+            <img src="<?php echo e(asset('img/interface/vinoMockup.png')); ?>" class="card-img-top" alt="Vino 3" />
             <div class="card-body">
               <h5 class="card-title">Vinarija Bubrig</h5>
               <p class="card-text">Bregovita Hrvatska</p>
@@ -277,7 +278,7 @@
         <!-- Vinarija Deak -->
         <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-4 filter istraKvarner">
           <div class="card">
-            <img src="img/vinarije/deak-removebg-preview.png" class="card-img-top" alt="Vinarija Deak" />
+            <img src="<?php echo e(asset('img/interface/vinoMockup.png')); ?>" class="card-img-top" alt="Vino 3" />
             <div class="card-body">
               <h5 class="card-title">Vinarija Deak</h5>
               <p class="card-text">Istra i Kvarner</p>
@@ -288,7 +289,7 @@
         <!-- Vinarija Deak (ponovljena) -->
         <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-4 filter dalmacija">
           <div class="card">
-            <img src="img/vinarije/deak-removebg-preview.png" class="card-img-top" alt="Vinarija Deak" />
+            <img src="<?php echo e(asset('img/interface/vinoMockup.png')); ?>" class="card-img-top" alt="Vino 3" />
             <div class="card-body">
               <h5 class="card-title">Vinarija Deak</h5>
               <p class="card-text">Dalmacija</p>
@@ -299,7 +300,7 @@
         <!-- Vinarija Jakob -->
         <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-4 filter slavonijaPodunavlje">
           <div class="card">
-            <img src="img/vinarije/jakob-removebg-preview.png" class="card-img-top" alt="Vinarija Jakob" />
+            <img src="<?php echo e(asset('img/interface/vinoMockup.png')); ?>" class="card-img-top" alt="Vino 3" />
             <div class="card-body">
               <h5 class="card-title">Vinarija Jakob</h5>
               <p class="card-text">Slavonija i Podunavlje</p>
@@ -310,7 +311,7 @@
         <!-- Vinarija Kalažić -->
         <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-4 filter bregovitaHrvatska">
           <div class="card">
-            <img src="img/vinarije/kalazic.png" class="card-img-top" alt="Vinarija Kalažić" />
+            <img src="<?php echo e(asset('img/interface/vinoMockup.png')); ?>" class="card-img-top" alt="Vino 3" />
             <div class="card-body">
               <h5 class="card-title">Vinarija Kalažić</h5>
               <p class="card-text">Bregovita Hrvatska</p>
@@ -321,7 +322,7 @@
         <!-- Vinarija Siber -->
         <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-4 filter dalmacija">
           <div class="card">
-            <img src="img/vinarije/siber.png" class="card-img-top" alt="Vinarija Siber" />
+            <img src="<?php echo e(asset('img/interface/vinoMockup.png')); ?>" class="card-img-top" alt="Vino 3" />
             <div class="card-body">
               <h5 class="card-title">Vinarija Siber</h5>
               <p class="card-text">Dalmacija</p>
@@ -332,7 +333,7 @@
         <!-- Vinarija Szabo -->
         <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-4 filter slavonijaPodunavlje">
           <div class="card">
-            <img src="img/vinarije/szabo.png" class="card-img-top" alt="Vinarija Szabo" />
+            <img src="<?php echo e(asset('img/interface/vinoMockup.png')); ?>" class="card-img-top" alt="Vino 3" />
             <div class="card-body">
               <h5 class="card-title">Vinarija Szabo</h5>
               <p class="card-text">Slavonija i Podunavlje</p>
@@ -343,7 +344,7 @@
         <!-- Vinarija Tošić -->
         <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-4 filter istraKvarner">
           <div class="card">
-            <img src="img/vinarije/tosic-removebg-preview.png" class="card-img-top" alt="Vinarija Tošić" />
+            <img src="<?php echo e(asset('img/interface/vinoMockup.png')); ?>" class="card-img-top" alt="Vino 3" />
             <div class="card-body">
               <h5 class="card-title">Vinarija Tošić</h5>
               <p class="card-text">Istra i Kvarner</p>
@@ -354,7 +355,7 @@
         <!-- Vinarija Vinković -->
         <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-4 filter bregovitaHrvatska">
           <div class="card">
-            <img src="img/vinarije/vinkovic-removebg-preview.png" class="card-img-top" alt="Vinarija Vinković" />
+            <img src="<?php echo e(asset('img/interface/vinoMockup.png')); ?>" class="card-img-top" alt="Vino 3" />
             <div class="card-body">
               <h5 class="card-title">Vinarija Vinković</h5>
               <p class="card-text">Bregovita Hrvatska</p>
@@ -365,7 +366,7 @@
         <!-- Vinarija Zabić -->
         <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-4 filter dalmacija">
           <div class="card">
-            <img src="img/vinarije/zabic-removebg-preview.png" class="card-img-top" alt="Vinarija Zabić" />
+            <img src="<?php echo e(asset('img/interface/vinoMockup.png')); ?>" class="card-img-top" alt="Vino 3" />
             <div class="card-body">
               <h5 class="card-title">Vinarija Zabić</h5>
               <p class="card-text">Dalmacija</p>
@@ -446,6 +447,89 @@
     ></script>
     <script src="js/script.js"></script>
     <script src="js/lightbox.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        $(".nav-button").click(function () {
+          $(".nav-button").toggleClass("change");
+        });
+
+        $(window).scroll(function () {
+          let position = $(this).scrollTop();
+          if (position >= 200) {
+            $(".nav-menu").addClass("custom-navbar");
+          } else {
+            $(".nav-menu").removeClass("custom-navbar");
+          }
+        });
+
+        $(window).scroll(function () {
+          let position = $(this).scrollTop();
+          if (position >= 1400) {
+            $(".gallery").addClass("change");
+          } else {
+            $(".gallery").removeClass("change");
+          }
+        });
+
+        $(".gallery-list-item").click(function () {
+          let value = $(this).attr("data-filter");
+          if (value === "sve") {
+            $(".filter").show(400);
+          } else {
+            $(".filter")
+              .not("." + value)
+              .hide(400);
+            $(".filter")
+              .filter("." + value)
+              .show(400);
+          }
+        });
+
+        $(".gallery-list-item").click(function () {
+          $(this).addClass("active-item").siblings().removeClass("active-item");
+        });
+
+        $('#sorteVina').change(function() {
+            var selectedSorta = $(this).val();
+            $('#vine .col-lg-4').hide(400);
+            $('#vine .col-lg-4.' + selectedSorta).show(400);
+          });
+
+
+        document.addEventListener("DOMContentLoaded", function() {
+          var slider = document.getElementById("slider");
+
+          // Broj sličica u slideru
+          var slides = slider.querySelectorAll(".carousel-item");
+
+          // Postavljamo indeks aktivne sličice na 0
+          var currentSlide = 0;
+
+          // Prikazuje sljedeću sličicu
+          function showNextSlide() {
+            slides[currentSlide].classList.remove("active");
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add("active");
+          }
+
+          // Prikazuje prethodnu sličicu
+          function showPreviousSlide() {
+            slides[currentSlide].classList.remove("active");
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            slides[currentSlide].classList.add("active");
+          }
+
+          // Dodajemo event listenere za gumb za prikaz sljedeće sličice
+          document.getElementById("nextBtn").addEventListener("click", showNextSlide);
+
+          // Dodajemo event listenere za gumb za prikaz prethodne sličice
+          document.getElementById("prevBtn").addEventListener("click", showPreviousSlide);
+        });
+
+
+      });
+    </script>
   </body>
 </html>
 <?php /**PATH C:\Projekti\wine360\resources\views/winery/archive.blade.php ENDPATH**/ ?>

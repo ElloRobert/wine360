@@ -7,6 +7,42 @@
 	.table-vehicles{
 		margin-top: 50px;
 	}
+	.panel-default>.panel-heading {
+		background-color: #F8F8FA !important;
+	}
+	.nav-tabs {
+    border-bottom: none !important;
+	}
+	.nav-tabs>li>a {
+		margin-right: 2px;
+		line-height: 1.42857143;
+		border: 1px solid transparent;
+		border-radius: 4px 4px 0 0;
+		margin-bottom: -12px !important;
+		width: Hug (157px)px;
+		height: Hug (56px)px;
+		padding: 16px 50px 16px 50px;
+		gap: 8px;
+		border-radius: 0px 30px 0px 0px;
+		opacity: 0px;
+		color: #B8B8B8;
+
+	}
+	.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+		color: #590C13;
+		cursor: default;
+		background-color: #fff;
+		border: 1px solid #ddd;
+		border-bottom-color: transparent;
+		font-family: 'Poppins light', sans-serif !important;
+		font-size: 16px;
+		font-weight: 600;
+		line-height: 24px;
+		text-align: left;
+		margin-left: -15px;
+		border: none;
+
+	}
 </style>
 <div class="home-dashboard-content">
 	<div class="row vehicles-home text-left mt-15">

@@ -99,10 +99,9 @@
 			<?php endif; ?>
 		
 		</div>
-		<?php echo $__env->make('wine.addModal', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-		<?php if(!Auth::user()->hasRole('employee')): ?>
-			<?php echo $__env->make('wine.confirmModal', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-		<?php endif; ?>
+		<?php echo $__env->make('messages.addModal', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+		<?php echo $__env->make('messages.confirmModal', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+		<?php echo $__env->make('messages.replyModal', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 	</div>
 </div>
 
@@ -144,118 +143,23 @@
 </script>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script>
-	// HTML elementi
-	let vehicleGroupSelect = document.querySelector('select[name="vehicleGroup"]');
-	let subcategoryContainer = document.querySelector('#subcategoryContainer');
-
-	// Funkcija za dohvaćanje subkategorija
-	function fetchSubcategories(selectedGroupId) {
-		// Slanje Axios zahtjeva na backend za subcategories
-		axios.get('/configuration/subcategory/' + selectedGroupId)
-			.then(function(response) {
-				let subcategories = response.data.subcategory;
-				// Kreiranje i postavljanje novog select elementa
-				let subcategorySelect = document.createElement('select');
-				subcategorySelect.name = 'subcategory';
-				subcategorySelect.classList.add('form-control');
-				subcategoryContainer.innerHTML = ''; // Očisti prethodni sadržaj
-				subcategoryContainer.appendChild(subcategorySelect);
-				subcategories.forEach(function(subcategory) {
-					let option = document.createElement('option');
-					option.value = subcategory.id;
-					option.textContent = subcategory.name;
-					subcategorySelect.appendChild(option);
-				});
-			})
-			.catch(function(error) {
-				console.error('Greška pri dohvaćanju podkategorija:', error);
-			});
-	}
-
-	// Rukovanje promjenama u selektu
-	vehicleGroupSelect.addEventListener('change', function() {
-		let selectedGroupId = this.value;
-		if (selectedGroupId) {
-			fetchSubcategories(selectedGroupId);
-		} else {
-			subcategoryContainer.innerHTML = ''; // Ako nije odabrana vrijednost, ispraznite subcategoryContainer
-		}
-	});
-
-	// Prilikom prvog učitavanja stranice, provjeri koja je kategorija odabrana
-	let initialSelectedGroupId = vehicleGroupSelect.value;
-	if (initialSelectedGroupId) {
-		fetchSubcategories(initialSelectedGroupId);
-	}
-	// Osluškivanje promene u marki
-	$('select[name="vehicles_mark"]').on('change', function() {
-            var selectedBrand = $(this).val();
-
-            // Ako nije odabrana marka, prazni modele i izlazi
-            if (!selectedBrand) {
-                $('select[name="vehicles_model"]').empty();
-                return;
-            }
-
-            // Inače, učitaj modele te marke
-			axios.get('ModelsByBrand/' + selectedBrand)
-			.then(function(response) {
-				// Popuni select sa modelima
-				var modelsSelect = $('select[name="vehicles_model"]');
-                    modelsSelect.empty();
-
-                    // Dodaj praznu opciju
-                    modelsSelect.append('<option value="">-</option>');
-					console.log(response);
-                    // Dodaj opcije sa modelima
-                    $.each(response.data.models, function(key, value) {
-                        modelsSelect.append('<option value="' + value.id + '">' + value.title + '</option>');
-                    });
-                    // Osveži Select2
-                    modelsSelect.select2();
-			})
-			.catch(function(error) {
-				console.error('Greška pri dohvaćanju podkategorija:', error);
-			});
-		});
 
 
-
-</script>
-<script>
-
-
-	function editWine(wine_id) {
-		var wine_id = wine_id;
-		$('#addWineModal').modal('show');
+	function editMessage(message_id) {
+		var message_id = message_id;
+		$('#addMessageModal').modal('show');
 		$.ajax({
 			type: "POST",
-			url: "<?php echo e(route('wines.details')); ?>", 
+			url: "<?php echo e(route('messages.details')); ?>", 
 			data: { 
-				id: wine_id,
+				id: message_id,
 				_token: "<?php echo e(csrf_token()); ?>",
 			},
 			success: function(data) {
 				
-				$('#wine_id').val(data.id)
-				$('#wine-name').val(data.name);
-				$('#wine-harvest-date').val(data.harvest_date);
-				$('#wine-harvest-method').val(data.harvest_method);
-				$('#wine-vintage-variety').val(data.vintage_variety);
-				$('#wine-nutrition-data').val(data.nutrition_data);
-				$('#wine-allergen-declaration').val(data.allergen_declaration);
-				$('#wine-country-of-origin').val(data.country_of_origin);
-				$('#wine-importer-bottler-manufacturer').val(data.importer_bottler_manufacturer);
-				$('#wine-geographical-origin-labels').val(data.geographical_origin_labels);
-				$('#wine-harvest-year').val(data.harvest_year);
-				$('#wine-alcohol-by-volume').val(data.alcohol_by_volume);
-				$('#wine-net-quantity-ml').val(data.net_quantity_ml);
-				$('#wine-sugar-content').val(data.sugar_content);
-				$('#wine-grape-variety-harvest-specific').val(data.grape_variety_harvest_specific);
-				$('#wine-product-description').val(data.product_description);
-				$('#wine-expiration-date').val(data.expiration_date);
-				$('#qrCode').html(data.qr);
-
+				$('#message-name').val(data.user_name)
+				$('#message-email').val(data.email)
+				$('#message-message').val(data.message)
 				$('.select2').select2();
 
 			},
@@ -265,12 +169,16 @@
 		});
 	}
 
-	function deleteWine(wine_id) {
-		var wine_id = wine_id;
+	function deleteMessage(message_id) {
+		var message_id = message_id;
 		$('#confirmModal').modal('show');
-		$('#malfunction-delete-form').attr('action', '/wines/' + wine_id);
+		$('#malfunction-delete-form').attr('action', '/messages/' + message_id);
 		$('#confirm').modal({ backdrop: 'static', keyboard: false });
 	
+	}
+
+	function messageReply(message_id){
+		$('#replyMessageModal').modal('show');
 	}
 	$(function() {
         let statusFilter = '';

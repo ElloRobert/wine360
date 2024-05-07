@@ -1,0 +1,40 @@
+
+
+<div class="modal fade" id="replyMessageModal" role="dialog" aria-labelledby="replyMessageModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-custom" role="document">
+        <div class="modal-content">
+            <!-- Sadržaj modala -->
+            <div class="modal-header" style="border: none;">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><img src="{{ asset('img/interface/close.svg') }}"></button>
+                <h2 class="modal-title modal-naslov" id="replyMessageLabel">Pregledaj upit</h2>
+            </div>
+            <div class="modal-body">
+                <div class="row" style="margin-bottom: 60px">
+                    <form method="POST" action="#" enctype="multipart/form-data">
+                        {{ csrf_field() }}
+                        <input class="form-control1 text-center" type="text" name="message_id" id="message_id" value="{{ old('id') }}" hidden/>
+                            <div id="identifikacijskiPodaciInputi" class="" style="padding-bottom: 15px">
+                                <div class="col-xs-12 col-sm-4 padding0">
+                                </div>
+                                <div class="col-xs-12 col-sm-6 padding0">
+                                    <div class="row">
+                                        <div class="marginTop">
+                                            <div class="col-xs-10 col-sm-10">
+                                                <label class="control-label" for="message-message">Odgovor:</label>
+                                            </div>
+                                            <div class="col-xs-10 col-sm-10">
+                                                <textarea class="form-control1 text-center" name="message" id="message-message" disabled>{{ old('message') }}</textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-3 padding0">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  

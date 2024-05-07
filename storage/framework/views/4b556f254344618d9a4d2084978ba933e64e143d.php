@@ -127,7 +127,7 @@
       <div class="blok">
             <!-- Sadržaj prve kolone -->
             <div class="naslov">
-              <img src="<?php echo e(asset('img/interface/autic.svg')); ?>" class="smanjena-slika">
+              <i class="fa-solid fa-wine-bottle " style="color: #590C13;" ></i>
               Dodajte novo vino!
             </div>
             <div class="text">

@@ -83,12 +83,6 @@
 							@endif
 						</div>
 					</div>
-					<div class="col-xs-10 col-sm-10">
-						<label class="control-label" for="applicationState">{{ trans('configuration.applicationState') }}</label>
-					</div>
-					<div class="col-xs-10 col-sm-10">
-						<input class="form-control1" type="text" name="applicationState" id="applicationState" @role('employee') disabled value="{{ Auth::user()->legalEntityUser->configuration->applicationState }}" @endrole @role('admin|legal|private') value="{{ Auth::user()->configuration->applicationState }}" @endrole/>
-					</div>
 					<div class="form-group">
 						<div class="col-xs-12 col-sm-12 padding0">
 							@if ($errors->has('applicationState'))
@@ -145,12 +139,6 @@
 							@endif
 						</div>
 					</div>
-					<div class="col-xs-10 col-sm-10">
-						<label class="control-label" for="wineryDescription">{{ trans('configuration.wineryDescription') }}</label>
-					</div>
-					<div class="col-xs-10 col-sm-10">
-						<textarea class="form-control1" name="wineryDescription" id="wineryDescription" rows="5">@role('employee'){{ Auth::user()->legalEntityUser->configuration->wineryDescription }}@endrole @role('admin|legal|private'){{ Auth::user()->configuration->wineryDescription }}@endrole</textarea>
-					</div>
 					<div class="form-group">
 						<div class="col-xs-12 col-sm-12 padding0">
 							@if ($errors->has('wineryDescription'))
@@ -160,70 +148,6 @@
 							@endif
 						</div>
 					</div>
-					<div class="col-xs-10 col-sm-10">
-						<label class="control-label" for="innovations">{{ trans('configuration.innovations') }}</label>
-					</div>
-					<div class="col-xs-10 col-sm-10">
-						<textarea class="form-control1" name="innovations" id="innovations" rows="5">@role('employee'){{ Auth::user()->legalEntityUser->configuration->innovations }}@endrole @role('admin|legal|private'){{ Auth::user()->configuration->innovations }}@endrole</textarea>
-					</div>
-					<div class="form-group">
-						<div class="col-xs-12 col-sm-12 padding0">
-							@if ($errors->has('innovations'))
-								<span class="help-block text-center">
-									<strong>{{ $errors->first('innovations') }}</strong>
-								</span>
-							@endif
-						</div>
-					</div>
-					<div class="col-xs-10 col-sm-10">
-						<label class="control-label" for="packaging">{{ trans('configuration.packaging') }}</label>
-					</div>
-					<div class="col-xs-10 col-sm-10">
-						<textarea class="form-control1" name="packaging" id="packaging" rows="5">@role('employee'){{ Auth::user()->legalEntityUser->configuration->packaging }}@endrole @role('admin|legal|private'){{ Auth::user()->configuration->packaging }}@endrole</textarea>
-					</div>
-					<div class="form-group">
-						<div class="col-xs-12 col-sm-12 padding0">
-							@if ($errors->has('packaging'))
-								<span class="help-block text-center">
-									<strong>{{ $errors->first('packaging') }}</strong>
-								</span>
-							@endif
-						</div>
-					</div>
-					<!-- Text area za Vinski asortiman -->
-					<div class="col-xs-10 col-sm-10">
-						<label class="control-label" for="wineAssortment">{{ trans('configuration.wineAssortment') }}</label>
-					</div>
-					<div class="col-xs-10 col-sm-10">
-						<textarea class="form-control1" name="wineAssortment" id="wineAssortment" rows="5">@role('employee'){{ Auth::user()->legalEntityUser->configuration->wine_assortment}}@endrole @role('admin|legal|private'){{ Auth::user()->configuration->wine_assortment }}@endrole</textarea>
-					</div>
-					<div class="form-group">
-						<div class="col-xs-12 col-sm-12 padding0">
-							@if ($errors->has('wineAssortment'))
-								<span class="help-block text-center">
-									<strong>{{ $errors->first('wineAssortment') }}</strong>
-								</span>
-							@endif
-						</div>
-					</div>
-
-					<!-- Text area za Nagrade -->
-					<div class="col-xs-10 col-sm-10">
-						<label class="control-label" for="awards">{{ trans('configuration.awards') }}</label>
-					</div>
-					<div class="col-xs-10 col-sm-10">
-						<textarea class="form-control1" name="awards" id="awards" rows="5">@role('employee'){{ Auth::user()->legalEntityUser->configuration->awards }}@endrole @role('admin|legal|private'){{ Auth::user()->configuration->awards }}@endrole</textarea>
-					</div>
-					<div class="form-group">
-						<div class="col-xs-12 col-sm-12 padding0">
-							@if ($errors->has('awards'))
-								<span class="help-block text-center">
-									<strong>{{ $errors->first('awards') }}</strong>
-								</span>
-							@endif
-						</div>
-					</div>
-
 					<div class="col-xs-10 col-sm-10">
 						<label class="control-label" for="admin-reports">{{ trans('configuration.emailForReports') }}</label>
 					</div>
@@ -312,206 +236,9 @@
 					</div>
 				</div>
 				@endunless
-				<div class="col-xs-12 marginTop add-employee-message padding0">
-					<div class="row">
-						@if(Session::has('message-add-employee'))
-							<div class="alert alert-info" role="alert">
-								<span aria-hidden="true" class="message-glyphicon glyphicon glyphicon-ok"></span>
-									{{ Session::get('message-add-employee') }}
-							</div>
-							@endif
-							@if(Session::has('message-delete-employee'))
-							<div class="alert alert-danger" role="alert">
-								<span aria-hidden="true" class="message-glyphicon glyphicon glyphicon-remove"></span>
-									{{ Session::get('message-delete-employee') }}
-							</div>
-							@endif
-							@if(Session::has('message-activate-employee'))
-							<div class="alert alert-info" role="alert">
-								<span aria-hidden="true" class="message-glyphicon glyphicon glyphicon-ok"></span>
-									{{ Session::get('message-activate-employee') }}
-							</div>
-							@endif
-						</div>
-				</div>
-
-				@role('legal')
-				<div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-0 padding0 add-employee">
-					<h3>{{ trans('configuration.addEmployee') }}</h3>
-
-					<form id="user-registration-form" class="form-horizontal" role="form" method="POST" action="{{ route('registerEmployee') }}">
-						{{ csrf_field() }}
-						<div class="row form-content">
-							{{-- Name --}}
-							<div class="form-group-input-field form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-								<div class="col-xs-12 col-sm-12 padding0">
-									<label for="name" class="login-label-icon col-xs-3 padding0">
-										{{ trans('user.userName') }}
-									</label>
-									<div class="col-xs-9 padding0">
-										<input id="name" type="name" class="form-control1" name="name" value="{{ old('name') }}" placeholder="{{ trans('login.name') }}" >
-									</div>
-								</div>
-							</div>
-							<div class="form-group">
-								<div class="col-xs-12 col-sm-12 padding0">
-								@if ($errors->has('name'))
-									<span class="help-block text-center">
-										<strong>{{ $errors->first('name') }}</strong>
-									</span>
-								@endif
-								</div>
-							</div>
-
-							{{-- Email --}}
-							<div class="form-group-input-field form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-								<div class="col-xs-12 col-sm-12 padding0">
-									<label for="email" class="login-label-icon col-xs-3 padding0">
-										{{ trans('user.userEmail') }}
-									</label>
-									<div class="col-xs-9 padding0">
-										<input id="email" type="email" class="form-control1" name="email" value="{{ old('email') }}" placeholder="{{ trans('login.email') }}" >
-									</div>
-								</div>
-							</div>
-							<div class="form-group">
-								<div class="col-xs-12 col-sm-12 padding0">
-								@if ($errors->has('email'))
-									<span class="help-block text-center">
-										<strong>{{ $errors->first('email') }}</strong>
-									</span>
-								@endif
-								</div>
-							</div>
-
-							{{-- Password --}}
-							<div class="form-group-input-field form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-								<div class="col-xs-12 col-sm-12 padding0">
-									<label for="password" class="login-label-icon col-xs-3 padding0">
-										{{ trans('user.userPassword') }}
-									</label>
-									<div class="col-xs-9 padding0">
-										<input data-character-set="a-z,A-Z,0-9,#" rel="gp" id="password" type="text" class="form-control1" name="password" value="{{ old('password') }}" placeholder="{{ trans('login.password') }}" >
-										<a title="{{ trans('default.generateNewPassword') }}" class="default-button getNewPass">
-											<span class="fa fa-refresh"></span>
-										</a>
-									</div>
-								</div>
-							</div>
-							<div class="form-group">
-								<div class="col-xs-12 col-sm-12 padding0">
-								@if ($errors->has('password'))
-									<span class="help-block text-center">
-										<strong>{{ $errors->first('password') }}</strong>
-									</span>
-								@endif
-								</div>
-							</div>
-
-							{{-- Address --}}
-							<div class="form-group-input-field form-group{{ $errors->has('address') ? ' has-error' : '' }}">
-								<div class="col-xs-12 col-sm-12 padding0">
-									<label for="address" class="login-label-icon col-xs-3 padding0">
-										{{ trans('user.userAddress') }}
-									</label>
-									<div class="col-xs-9 padding0">
-										<input id="address" type="text" class="form-control1" name="address" value="{{ old('address') }}" placeholder="{{ trans('login.address') }}" >
-									</div>
-								</div>
-							</div>
-							<div class="form-group">
-								<div class="col-xs-12 col-sm-12 padding0">
-								@if ($errors->has('address'))
-									<span class="help-block text-center">
-										<strong>{{ $errors->first('address') }}</strong>
-									</span>
-								@endif
-								</div>
-							</div>
-						</div>
-
-						<div class="row form-submit">
-							<div class="form-group">
-								<div class="col-xs-12 col-sm-12 text-right">
-									<button id="register-employee" class="default-button">
-										{{ trans('default.add') }}
-									</button>
-								</div>
-							</div>
-						</div>
-
-					</form>
-				</div>
-
-				@unless($inactive_employees->isEmpty())
-					<div style="margin-top: 50px;" class="col-xs-12 padding0 employees">
-						<h3>{{ trans('configuration.listDeactivatedEmployees') }}</h3>
-
-						<div class="row default-div-table">
-							<div class="row default-div-table-header">
-								<div class="@role('legal') col-xs-4 @endrole @role('employee') col-xs-6 @endrole">
-									<strong>{{ trans('user.userName') }}</strong>http://Wine360/fuel
-								</div>
-								<div class="@role('legal') col-xs-4 @endrole @role('employee') col-xs-6 @endrole text-center">
-									<strong>{{ trans('user.userEmail') }}</strong>
-								</div>
-								@role('legal')
-									<div class="col-xs-4 text-center">
-										<strong>{{ trans('default.action') }}</strong>
-									</div>
-								@endrole
-							</div>
-
-							@foreach($inactive_employees as $employee)
-								<div class="row default-div-table-rows">
-									<div class="@role('legal') col-xs-4 @endrole @role('employee') col-xs-6 @endrole">
-										<span class="vertical-align-center">{{ $employee->name }}</span>
-									</div>
-									<div class="@role('legal') col-xs-4 @endrole @role('employee') col-xs-6 @endrole text-center">
-										<span class="vertical-align-center">{{ $employee->email }}</span>
-									</div>
-
-									@role('legal')
-										<div class="col-xs-4 text-right padding0">
-											<a data-em="{{ $employee->id }}" class="default-button activate-employee-model">
-												<span class="glyphicon glyphicon-ok" style="vertical-align:-1px;"></span>
-											</a>
-										</div>
-
-										<div class="modal" id="activate-employee-model-{{ $employee->id }}" style="display: none;">
-											<div class="modal-dialog">
-												<div class="modal-content model-content-activate">
-													<div class="modal-header modal-header-activate">
-															<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-															<h4 class="modal-title model-title-activate">{{ trans('configuration.confirmActivationTitle') }}</h4>
-													</div>
-													<div class="modal-body">
-														<div class="row marginTop">
-															<p>{{ trans('configuration.activateConfirmationText') }} {{ $employee->name }}?</p>
-														</div>
-													</div>
-														<div class="modal-footer">
-															<form method="POST" action="{{ route('activate.employee', [$employee->id]) }}">
-																{{ csrf_field() }}
-
-																<button title="{{ trans('default.removeEmployee') }} {{ $employee->name }}" type="submit" class="btn gumb">
-																	{{ trans('default.confirmActivationButton') }}
-																</button>
-															</form>
-
-															<button type="button" class="btn btn-sm btn-default" data-dismiss="modal">{{ trans('default.close') }}</button>
-														</div>
-												</div>
-											</div>
-										</div>
-									@endrole
-								</div>
-							@endforeach
-						</div>
-					</div>
-				@endunless
 				
-				@endrole
+
+				
 			</div>
 			@endrole
 		</div>
